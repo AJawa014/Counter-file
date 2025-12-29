@@ -3,7 +3,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { AIInsight } from "../types";
 
 export const getZikrInsight = async (zikrName: string): Promise<AIInsight | null> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   try {
     const response = await ai.models.generateContent({
@@ -34,7 +34,7 @@ export const getZikrInsight = async (zikrName: string): Promise<AIInsight | null
 };
 
 export const getSpiritualSuggestion = async (): Promise<string> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   try {
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
