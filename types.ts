@@ -11,7 +11,8 @@ export enum Tab {
   COUNTER = 'counter',
   HISTORY = 'history',
   AI = 'ai',
-  SETTINGS = 'settings'
+  SETTINGS = 'settings',
+  ADMIN = 'admin'
 }
 
 export interface AIInsight {
@@ -19,4 +20,14 @@ export interface AIInsight {
   meaning: string;
   benefit: string;
   transliteration: string;
+}
+
+export interface PaymentLog {
+  id: string;
+  amount: number;
+  currency: string;
+  customerName: string;
+  customerEmail: string;
+  timestamp: number;
+  status: 'successful' | 'failed';
 }
